@@ -38,13 +38,15 @@
 					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}"
 				},
 				"url": {
-					"raw": "http://login.wueww-admin.metafnord.de",
+					"raw": "http://wueww-admin.metafnord.de/login",
 					"protocol": "http",
 					"host": [
-						"login",
 						"wueww-admin",
 						"metafnord",
 						"de"
+					],
+					"path": [
+						"login"
 					]
 				}
 			},
@@ -77,13 +79,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://session-list.wueww-admin.metafnord.de",
+					"raw": "http://wueww-admin.metafnord.de/session",
 					"protocol": "http",
 					"host": [
-						"session-list",
 						"wueww-admin",
 						"metafnord",
 						"de"
+					],
+					"path": [
+						"session"
 					]
 				}
 			},
@@ -116,13 +120,15 @@
 					"raw": "{\n\t\"start\": \"2019-07-05T21:30:00+02:00\",\n\t\"end\": null,\n\t\"title\": \"meine zweite Session\",\n\t\"description\": {\n\t\t\"short\": \"muss hier echt was stehen, oh mann ey\"\n\t},\n\t\"location\": {\n\t\t\"name\": \"wohnzimmer\"\n\t}\n}"
 				},
 				"url": {
-					"raw": "http://session-create.wueww-admin.metafnord.de",
+					"raw": "http://wueww-admin.metafnord.de/session",
 					"protocol": "http",
 					"host": [
-						"session-create",
 						"wueww-admin",
 						"metafnord",
 						"de"
+					],
+					"path": [
+						"session"
 					]
 				}
 			},
@@ -155,15 +161,15 @@
 					"raw": "{\n\t\"start\": \"2019-07-05T21:30:00+02:00\",\n\t\"end\": null,\n\t\"title\": \"meine zweite Session\",\n\t\"description\": {\n\t\t\"short\": \"muss hier echt was stehen, oh mann ey\",\n\t\t\"long\": \"diese Session soll auch einen Langtext bekommen\"\n\t},\n\t\"location\": {\n\t\t\"name\": \"Arbeitszimmer\"\n\t}\n}"
 				},
 				"url": {
-					"raw": "http://session-update.wueww-admin.metafnord.de/3",
+					"raw": "http://wueww-admin.metafnord.de/session/3",
 					"protocol": "http",
 					"host": [
-						"session-update",
 						"wueww-admin",
 						"metafnord",
 						"de"
 					],
 					"path": [
+						"session",
 						"3"
 					]
 				}
