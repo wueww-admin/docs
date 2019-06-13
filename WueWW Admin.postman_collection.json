@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "8a32a4bf-b267-4bb4-8076-1b7dfffc17f8",
+		"name": "WueWW Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "94f32c5d-ac7f-4d25-a581-79aa2466ac1a",
+						"exec": [
+							"pm.environment.set(\"auth_token\", pm.response.text());",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "http://login.wueww-admin.metafnord.de",
+					"protocol": "http",
+					"host": [
+						"login",
+						"wueww-admin",
+						"metafnord",
+						"de"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Session List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://session-list.wueww-admin.metafnord.de",
+					"protocol": "http",
+					"host": [
+						"session-list",
+						"wueww-admin",
+						"metafnord",
+						"de"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Session Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"start\": \"2019-07-05T21:30:00+02:00\",\n\t\"end\": null,\n\t\"title\": \"meine zweite Session\",\n\t\"description\": {\n\t\t\"short\": \"muss hier echt was stehen, oh mann ey\"\n\t},\n\t\"location\": {\n\t\t\"name\": \"wohnzimmer\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://session-create.wueww-admin.metafnord.de",
+					"protocol": "http",
+					"host": [
+						"session-create",
+						"wueww-admin",
+						"metafnord",
+						"de"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Session Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"start\": \"2019-07-05T21:30:00+02:00\",\n\t\"end\": null,\n\t\"title\": \"meine zweite Session\",\n\t\"description\": {\n\t\t\"short\": \"muss hier echt was stehen, oh mann ey\",\n\t\t\"long\": \"diese Session soll auch einen Langtext bekommen\"\n\t},\n\t\"location\": {\n\t\t\"name\": \"Arbeitszimmer\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://session-update.wueww-admin.metafnord.de/3",
+					"protocol": "http",
+					"host": [
+						"session-update",
+						"wueww-admin",
+						"metafnord",
+						"de"
+					],
+					"path": [
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
